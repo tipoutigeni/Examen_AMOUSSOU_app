@@ -94,10 +94,12 @@ import plotly.express as px
 st.set_page_config(page_title="Dashboard Transactions", layout="wide")
 st.title("Dashboard — Analyse des Transactions")
 
+
 # --- Chargement des données ---
 @st.cache_data
 def load_data():
-    df = pd.read_csv("Dataset.csv")
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    df = pd.read_csv(os.path.join(BASE_DIR, 'Dataset.csv'))
     df['TransactionStartTime'] = pd.to_datetime(df['TransactionStartTime'])
     df['Hour'] = df['TransactionStartTime'].dt.hour
     df['AbsAmount'] = df['Amount'].abs()
