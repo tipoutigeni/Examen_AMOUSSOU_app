@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 
-df = pd.read_csv("Dataset.csv")
+df = pd.read_csv('Dataset.csv')
 
 print(df.shape)          # (2000, 8)
 print(df.dtypes)         # types de chaque colonne
