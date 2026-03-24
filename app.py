@@ -93,7 +93,7 @@ import plotly.express as px
 
 # --- Configuration de la page ---
 st.set_page_config(page_title="Dashboard Transactions", layout="wide")
-st.title("📊 Dashboard — Analyse des Transactions")
+st.title("Dashboard — Analyse des Transactions")
 
 # --- Chargement des données ---
 @st.cache_data
