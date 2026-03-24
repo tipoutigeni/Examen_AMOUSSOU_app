@@ -99,7 +99,7 @@ st.title("Dashboard — Analyse des Transactions")
 @st.cache_data
 def load_data():
    
-    df = pd.read_csv(os.path.join(BASE_DIR, 'Dataset.csv'))
+    df = pd.read_csv('Dataset.csv')
     df['TransactionStartTime'] = pd.to_datetime(df['TransactionStartTime'])
     df['Hour'] = df['TransactionStartTime'].dt.hour
     df['AbsAmount'] = df['Amount'].abs()
@@ -108,7 +108,7 @@ def load_data():
 df = load_data()
 
 # --- Filtres dans la barre latérale ---
-st.sidebar.header("🔧 Filtres")
+st.sidebar.header("Filtres")
 categories = st.sidebar.multiselect(
     "Catégories de produits",
     options=df['ProductCategory'].unique(),
