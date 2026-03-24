@@ -4,7 +4,7 @@ import seaborn as sns
 import plotly.express as px
 
 # Chargement des données
-df = pd.read_csv(r'C:\Users\LIN-ASIN\Documents\Anselme\Anselme\Master Finance Digitale 2025-2027\Semestre 1\PYTHON\Examen_AMOUSSOU_GUENOU\Dataset.csv')
+df = pd.read_csv(r'Dataset.csv')
 
 print(df.shape)          # (2000, 8)
 print(df.dtypes)         # types de chaque colonne
@@ -98,7 +98,7 @@ st.title("📊 Dashboard — Analyse des Transactions")
 # --- Chargement des données ---
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r'C:\Users\LIN-ASIN\Documents\Anselme\Anselme\Master Finance Digitale 2025-2027\Semestre 1\PYTHON\Examen_AMOUSSOU_GUENOU\Dataset.csv')
+    df = pd.read_csv(r'Dataset.csv')
     df['TransactionStartTime'] = pd.to_datetime(df['TransactionStartTime'])
     df['Hour'] = df['TransactionStartTime'].dt.hour
     df['AbsAmount'] = df['Amount'].abs()
